@@ -1,38 +1,32 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Джунглі</title>
   <style>
     html, body {
-      height: 100%;
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-image: url('https://images.unsplash.com/photo-1597764691758-9f18b6c1b412?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+      padding: 0;
+      height: 100%;
+      font-family: sans-serif;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      flex-direction: column;
+      background-image: url('https://cdn.pixabay.com/photo/2016/11/29/03/53/jungle-1867283_1280.jpg');
+      background-size: cover;
+      background-position: center;
       color: white;
-      text-shadow: 1px 1px 3px #000;
-      user-select: none;
+      text-shadow: 1px 1px 3px black;
     }
     button {
       padding: 20px 40px;
       font-size: 24px;
-      border: none;
-      border-radius: 12px;
-      background-color: #28a745;
+      background-color: green;
       color: white;
+      border: none;
+      border-radius: 10px;
       cursor: pointer;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-      transition: background-color 0.3s ease;
-    }
-    button:hover {
-      background-color: #218838;
     }
     #message {
       margin-top: 20px;
@@ -42,16 +36,9 @@
   </style>
 </head>
 <body>
-  <button id="tolikButton">Толік нажми на мене</button>
+  <button onclick="document.getElementById('message').style.display='block'">
+    Толік надми на мене
+  </button>
   <div id="message">Толік лох, навчись нажимати кнопку ответить.</div>
-
-  <script>
-    const button = document.getElementById('tolikButton');
-    const message = document.getElementById('message');
-
-    button.addEventListener('click', () => {
-      message.style.display = 'block';
-    });
-  </script>
 </body>
 </html>
