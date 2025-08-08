@@ -4,56 +4,54 @@
   <meta charset="UTF-8" />
   <title>Джунглі</title>
   <style>
-    body {
+    html, body {
+      height: 100%;
       margin: 0;
-      height: 100vh;
+      font-family: Arial, sans-serif;
       background-image: url('https://images.unsplash.com/photo-1558981403-c5f9891c97d4?auto=format&fit=crop&w=1350&q=80');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
       color: white;
-      overflow-x: hidden;
-      position: relative;
-    }
-    h1 {
-      text-align: center;
-      padding-top: 50px;
-      text-shadow: 2px 2px 4px #00000088;
+      text-shadow: 1px 1px 3px #000;
+      user-select: none;
     }
     button {
-      display: block;
-      margin: 40px auto;
+      padding: 20px 40px;
+      font-size: 24px;
+      border: none;
+      border-radius: 12px;
       background-color: #28a745;
       color: white;
-      border: none;
-      padding: 15px 35px;
-      font-size: 20px;
-      border-radius: 10px;
       cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
       transition: background-color 0.3s ease;
-      text-shadow: 1px 1px 2px #000000aa;
     }
     button:hover {
       background-color: #218838;
     }
-    #monkey {
-      width: 100px;
-      position: absolute;
-      top: 200px;
-      left: -120px; /* старт за межами лівої сторони */
-      animation: moveMonkey 8s linear infinite;
-      filter: drop-shadow(2px 4px 3px rgba(0,0,0,0.5));
-    }
-    @keyframes moveMonkey {
-      0% { left: -120px; }
-      100% { left: 110%; }
+    #message {
+      margin-top: 20px;
+      font-size: 20px;
+      display: none;
     }
   </style>
 </head>
 <body>
-  <h1>Сайт у джунглях</h1>
-  <button onclick="alert('Ти натиснув кнопку! Вітаю!')">Натисни на мене</button>
-  <img id="monkey" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Capuchin_Costa_Rica_edit2.jpg" alt="Мавпочка" />
+  <button id="tolikButton">Толік надми на мене</button>
+  <div id="message">Толік лох, навчись нажимати кнопку ответить.</div>
+
+  <script>
+    const button = document.getElementById('tolikButton');
+    const message = document.getElementById('message');
+
+    button.addEventListener('click', () => {
+      message.style.display = 'block';
+    });
+  </script>
 </body>
 </html>
