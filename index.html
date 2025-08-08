@@ -1,41 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="uk">
 <head>
+  <meta charset="UTF-8" />
   <title>Джунглі</title>
   <style>
     body {
-      background-image: url('https://images.unsplash.com/photo-1558981403-c5f9891c97d4');
+      margin: 0;
+      height: 100vh;
+      background-image: url('https://images.unsplash.com/photo-1558981403-c5f9891c97d4?auto=format&fit=crop&w=1350&q=80');
       background-size: cover;
-      font-family: sans-serif;
-      text-align: center;
-      padding-top: 100px;
+      background-position: center;
+      background-repeat: no-repeat;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: white;
+      overflow-x: hidden;
+      position: relative;
+    }
+    h1 {
+      text-align: center;
+      padding-top: 50px;
+      text-shadow: 2px 2px 4px #00000088;
     }
     button {
-      background-color: green;
+      display: block;
+      margin: 40px auto;
+      background-color: #28a745;
       color: white;
       border: none;
-      padding: 20px 40px;
+      padding: 15px 35px;
       font-size: 20px;
       border-radius: 10px;
       cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-shadow: 1px 1px 2px #000000aa;
+    }
+    button:hover {
+      background-color: #218838;
     }
     #monkey {
       width: 100px;
       position: absolute;
       top: 200px;
-      left: 0;
-      animation: move 5s linear infinite;
+      left: -120px; /* старт за межами лівої сторони */
+      animation: moveMonkey 8s linear infinite;
+      filter: drop-shadow(2px 4px 3px rgba(0,0,0,0.5));
     }
-    @keyframes move {
-      0% { left: 0; }
-      100% { left: 100%; }
+    @keyframes moveMonkey {
+      0% { left: -120px; }
+      100% { left: 110%; }
     }
   </style>
 </head>
 <body>
-  <img id="monkey" src="https://upload.wikimedia.org/wikipedia/commons/3/36/Hopetoun_falls.jpg" alt="Monkey" />
-  <h1>Сайт в джунглях</h1>
-  <button onclick="alert('Толік лох, навчись нажимати кнопку ответить')">Нажми на мене</button>
+  <h1>Сайт у джунглях</h1>
+  <button onclick="alert('Ти натиснув кнопку! Вітаю!')">Натисни на мене</button>
+  <img id="monkey" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Capuchin_Costa_Rica_edit2.jpg" alt="Мавпочка" />
 </body>
 </html>
